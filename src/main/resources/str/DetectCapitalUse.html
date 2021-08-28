@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检测大写字母</title>
+    <script type="text/javascript">
+
+        function fun1() {
+            var str = document.getElementById("word").value;
+            console.log(str)
+            var reg = new RegExp("(^([A-Z]{1}[a-z]*)$)|(^[a-z]*$)|(^[A-Z]*$)");
+            console.log(reg.test(str));
+            return reg.test(str);
+        }
+    </script>
+</head>
+<body>
+检测大写字母：<input name="word" id="word" value="ABC">
+<button name="test" onclick="fun1()">确定</button>
+</body>
+</html>
