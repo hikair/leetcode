@@ -1,4 +1,4 @@
-package com.arr;
+package com.arr.prefix;
 
 /**
  * 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。

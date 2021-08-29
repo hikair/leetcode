@@ -1,5 +1,6 @@
-package com.arr;
+package com.arr.prefix;
 
+import com.arr.prefix.SumOddLengthSubarrays;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Before;
