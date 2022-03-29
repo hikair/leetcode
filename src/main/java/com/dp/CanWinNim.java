@@ -1,4 +1,4 @@
-package com.dtgh;
+package com.dp;
 
 /**
  * 你和你的朋友，两个人一起玩 Nim 游戏：

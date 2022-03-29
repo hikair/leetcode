@@ -1,4 +1,4 @@
-package com.dtgh;
+package com.dp;
 
 /**
  * 你有三种硬币，分别面值2元，5元和7元，每种硬币都有足够的数量
@@ -61,7 +61,7 @@ public class Coin {
     public static void main(String[] args) {
 
         Coin coin = new Coin();
-        int i = coin.minCoinNum2(new int[]{2,5,7},27);
+        int i = coin.minCoinNum2(new int[]{2,5,7},8);
         System.out.println(i);
 
     }
