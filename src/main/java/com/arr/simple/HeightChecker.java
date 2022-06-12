@@ -50,7 +50,30 @@ import java.util.Arrays;
  */
 public class HeightChecker {
 
+    /**
+     * 桶排序
+     * @param heights
+     * @return
+     */
     public int heightChecker(int[] heights) {
+        int ans = 0, index = 0;
+        int max = Arrays.stream(heights).max().getAsInt();
+        int[] arr = new int[max + 1];
+        for (int height : heights) {
+            arr[height]++;
+        }
+        for (int i = 1; i <= max; i++) {
+            while(arr[i]-- > 0) {
+                if (i != heights[index]) {
+                    ans++;
+                }
+                index++;
+            }
+        }
+        return ans;
+    }
+
+    public int heightChecker2(int[] heights) {
         int ans = 0, n = heights.length;
         int[] copy = Arrays.copyOf(heights, n);
         Arrays.sort(heights);
