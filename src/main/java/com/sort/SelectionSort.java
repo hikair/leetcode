@@ -1,34 +1,21 @@
 package com.sort;
 
-import java.util.Arrays;
-
 /**
- * 选择排序
- * 具有不稳定性
- * 例：{5,8,5,2,9} 第一遍选择第1个元素5会和2交换，那么原序列中两个5的相对前后顺序就被破坏了，所以选择排序是一个不稳定的排序算法
+ * 选择排序，具有不稳定性
+ * 一次遍历选择元素最大的下标，与最后一位交换
  */
-public class SelectionSort {
-
-    public void selectionSort(int[] arr) {
+public class SelectionSort implements SortStrategy {
+    @Override
+    public void sortArr(int[] arr) {
         int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
-            int index = i;
-            for (int j = i + 1; j < n; j++) {
-                if(arr[index] > arr[j]) {
-                    index = j;
+        for (int i = n - 1; i > 0; i--) {
+            int m = i;
+            for (int j = 0; j < i; j++) {
+                if (arr[m] < arr[j]) {
+                    m = j;
                 }
             }
-            if(index != i) {
-                int temp = arr[i];
-                arr[i] = arr[index];
-                arr[index] = temp;
-            }
+            swap(arr, m, i);
         }
-    }
-
-    public static void main(String[] args) {
-        int[] arr = new int[]{5,8,5,2,9};
-        new SelectionSort().selectionSort(arr);
-        System.out.println(Arrays.toString(arr));
     }
 }
