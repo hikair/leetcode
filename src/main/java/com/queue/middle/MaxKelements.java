@@ -29,7 +29,7 @@ public class MaxKelements {
         for (int i = 0; i < k; i++) {
             Integer t = queue.poll();
             ans += t;
-            queue.add(t % 3 == 0 ? t / 3 : t / 3 + 1);
+            queue.add((t + 2) / 3);
         }
         return ans;
     }
